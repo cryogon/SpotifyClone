@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Ubuntu:wght@300&display=swap');
+body {
+    background-color: azure;
+}
+
+body::-webkit-scrollbar-track {
+    background: #000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    height: 3.3rem;
+    background-color: black;
+    color: white;
+    list-style-type: none;
+    /* padding: 0 10px; */
+}
+
+nav ul li {
+    padding: 0 0.56rem;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 1.3rem;
+}
+
+.addSongWindow {
+    display: none;
+}
+
+.addSongWindow form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 30%;
+    width: 30%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    position: absolute;
+    color: #000;
+    background-color: white;
+    z-index: 8;
+    top: 0;
+    left: 0;
+}
+
+.brand img {
+    width: 3.5rem;
+    /* padding: 0 8px; */
+}
+
+.bottom {
+    position: sticky;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    height: 6rem;
+    bottom: 0;
+    font-family: 'Nunito', sans-serif;
+}
+
+.icons {
+    margin: 1rem 0;
+}
+
+.icons i {
+    cursor: pointer;
+    margin-right: 1vw;
+}
+
+.container {
+    display: flex;
+    position: relative;
+    background-color: rgb(15, 15, 15);
+    color: white;
+    min-height: 75vh;
+    width: 70vw;
+    border-radius: 1rem;
+    font-family: 'Nunito', sans-serif;
+    margin: 1.4rem auto;
+    padding: 1.5rem 0.8rem;
+}
+
+#songSeek {
+    width: 40vw;
+    cursor: pointer;
+}
+
+.songItemsContainer {
+    width: 80vh;
+    padding: 0.7rem;
+    cursor: pointer;
+    /* background-color: wheat;
+    color: black; */
+}
+
+.songItems:hover {
+    background-color: rgb(34, 34, 34);
+}
+
+.songItems {
+    display: flex;
+    margin-bottom: 1.3rem;
+}
+
+.title {
+    /* margin-right: 50vh; */
+    width: 30vw;
+}
+
+.songItems img {
+    width: 4.5rem;
+    margin-right: 0.6rem;
+}
+
+.artist,
+#artistBottom {
+    font-size: small;
+    color: rgb(196, 196, 196);
+}
+
+.songInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+span.duration {
+    justify-content: flex-end;
+}
+
+.songList h1 {
+    margin-bottom: 0.7rem;
+}
+
+.suffleButton,
+.repeatButton {
+    color: white;
+}
+
+.iconsAndBar {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 80%;
+    align-items: center;
+    margin-right: 25rem;
+}
+
+#lyrics {
+    color: white;
+    min-height: 10vw;
+    min-width: 10vw;
+    /* display: none; */
+}
+
+#list li:hover {
+    list-style: url('play-solid.svg');
+}
+
+.bottomSong {
+    display: flex;
+    width: 40vh;
+}
+
+#bottomSongImage {
+    width: 10vh;
+    margin: 0 0.7rem;
+}
+
+.songLyrics {
+    display: flex;
+    position: relative;
+    top: 0%;
+    flex-direction: column;
+    align-items: center;
+    min-width: 20vw;
+    flex-wrap: wrap;
+    padding-left: 3rem;
+}
+
+#lyricsImage {
+    width: 15rem;
+    height: 15rem;
+    /* margin: 5px 100px; */
+    /* flex-basis: auto; */
+}
+
+object {
+    visibility: visible;
+    border: 0.01rem white
+}
+
+#lyricsText {
+    background-color: inherit;
+    margin-block-start: 1rem;
+}
+
+#lyricsText pre {
+    color: white;
+}
+
+#lyricsText {
+    display: flex;
+    flex-direction: column;
+    min-width: 15rem;
+}
+
+#cross {
+    display: none;
+}
+
+#listButton {
+    display: none;
+}
+
+iframe {
+    display: none;
+    position: fixed;
+    top: 25%;
+    left: 35%;
+    border: none;
+    z-index: 10;
+    box-shadow: 0px 0px 200px rgba(255, 255, 255, 0.1);
+}
+
+body::before {}
+
+body:after>*:not(#ifrm) {
+    filter: blur(8px);
+}
+
+.youtube {
+    align-self: flex-end;
+    transform: scale(1.4);
+}
+
+
+/*Mobile Version*/
+
+@media (max-width:35rem) {
+    iframe {
+        display: none;
+    }
+    .bar {
+        margin-inline-start: 1rem;
+        display: grid;
+        height: 1rem;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        justify-content: center;
+        align-items: center;
+    }
+    #lyricsImage {
+        width: 20rem;
+        height: 20rem;
+        margin-inline-start: -0.8rem;
+        margin-block-start: 1rem;
+    }
+    .songList {
+        display: none;
+    }
+    .bottomSong {
+        display: none;
+    }
+    .container {
+        margin: 0;
+        border-radius: 0;
+        width: 100vw;
+        height: 100vw;
+    }
+    .bottom {
+        background-color: rgb(15, 15, 15);
+        position: fixed;
+        bottom: 0;
+        height: 14rem;
+    }
+    .iconsAndBar {
+        width: 20rem;
+        margin-left: 4rem;
+    }
+    #suffle,
+    #back,
+    #playButton,
+    #next {
+        margin-inline: 1rem;
+        transform: scale(1.2);
+    }
+    #playButton {
+        transform: scale(1.9);
+        margin-block-end: 1.3rem;
+    }
+    #songSeek {
+        grid-row: 1;
+        grid-column: 1/ span 2;
+        width: 17rem;
+    }
+    #songCurrentTime {
+        grid-row: 2;
+        grid-column: 1;
+    }
+    #songTotalTime {
+        grid-row: 2;
+        grid-column: 2;
+        justify-self: right;
+    }
+    #songTotalTime {
+        margin-inline-start: -2rem;
+    }
+    #listButton {
+        grid-column: 1/span 2;
+        justify-self: right;
+        margin-block-start: 1rem;
+        transform: scale(1.3);
+    }
+    nav {
+        display: none;
+    }
+    #lyricsText {
+        margin-block-start: 2rem;
+        margin-inline-start: 1.5rem;
+        background-color: inherit;
+        justify-content: right;
+        transform: scale(1.5);
+    }
+    #lyricsTitle {
+        font-weight: 600;
+    }
+    #lyricsArtist {
+        font-weight: 400;
+    }
+    .icons {
+        margin-inline-start: -1.5rem;
+    }
+    .container [aria-disabled=true] {
+        position: absolute;
+        width: inherit;
+        min-height: 1rem;
+        background-color: inherit;
+        bottom: 0;
+        z-index: 9999;
+    }
+    .container {
+        width: 24rem;
+    }
+    body {
+        background-color: #151515;
+    }
+    #cross {
+        transform: scale(2);
+        margin-block-start: 1rem;
+        margin-inline-start: 1rem;
+    }
+    #listButton {
+        display: inline;
+    }
+}
