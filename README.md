@@ -1,6 +1,6 @@
 ﻿# SpotifyClone
  ## About
- - *Made with Vanilla JS with any libaries*
+ - *Made with Vanilla JS without any libaries*
  - *Have Lots Of Bug*
  
  ## Setup
